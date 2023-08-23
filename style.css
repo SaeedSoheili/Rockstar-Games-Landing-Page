@@ -403,7 +403,7 @@ body {
 .body4-div {
   height: fit-content;
   width: 1050px;
-  background-color: aqua;
+  /* background-color: aqua; */
   margin-top: 100px;
 }
 
@@ -462,4 +462,34 @@ body {
 .subject-body4:focus + .subject-counter,
 .message-body4:focus + .message-counter {
   opacity: 1;
+}
+
+.body5-div {
+  width: 1050px;
+  height: fit-content;
+  /* background-color: aqua; */
+  margin-top: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.icon-body5 {
+  width: 64px;
+}
+
+.number-body5 {
+  text-decoration: underline;
+  font-size: 25px;
+  display: block;
+  margin-bottom: -10px;
+  margin-top: -3px;
+}
+
+.name-body5 {
+  font-size: 13px;
 }
