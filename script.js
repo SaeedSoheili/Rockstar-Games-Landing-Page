@@ -27,6 +27,18 @@ let gameNameSlider = document.querySelector(".game-name-slider");
 let titleSlider = document.querySelector(".title-slider");
 let selectorSlider = document.querySelectorAll(".selector-slider");
 let gameImages = document.querySelectorAll(".game-img-body2");
+const subjectInput = document.querySelector(".subject-body4");
+const subjectCounter = document.querySelector(".subject-counter");
+const messageInput = document.querySelector(".message-body4");
+const messageCounter = document.querySelector(".message-counter");
+const subjectMaxLength = parseInt(subjectInput.getAttribute("maxlength"));
+const messageMaxLength = parseInt(messageInput.getAttribute("maxlength"));
+const menuBtn = document.getElementById("menuBtn");
+const menuOverlay = document.getElementById("menuOverlay");
+const menuIconImage = menuBtn.querySelector(".menu-icon-image-navbar");
+const changeThemeDiv = document.querySelector(".change-theme-div-navbar");
+const changeThemeBtn = changeThemeDiv.querySelector(".change-theme-btn-navbar");
+let isDarkTheme = false;
 
 // Navbar Hide and Show
 window.addEventListener("scroll", () => {
@@ -135,7 +147,6 @@ document.addEventListener("DOMContentLoaded", function () {
       goTopButton.style.display = "none";
     }
 
-    // Check if user has scrolled to the bottom
     if (window.innerHeight + currentScrollPos >= document.body.offsetHeight) {
       goTopButton.style.display = "none";
     }
@@ -157,14 +168,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Chars left for Inputs
 
-const subjectInput = document.querySelector(".subject-body4");
-const subjectCounter = document.querySelector(".subject-counter");
-const messageInput = document.querySelector(".message-body4");
-const messageCounter = document.querySelector(".message-counter");
-
-const subjectMaxLength = parseInt(subjectInput.getAttribute("maxlength"));
-const messageMaxLength = parseInt(messageInput.getAttribute("maxlength"));
-
 subjectInput.addEventListener("input", () => {
   const remainingChars = subjectMaxLength - subjectInput.value.length;
   subjectCounter.textContent = `You can write ${remainingChars} more ${
@@ -179,19 +182,11 @@ messageInput.addEventListener("input", () => {
 
 // Show and Hide Menu
 
-const menuBtn = document.getElementById("menuBtn");
-const menuOverlay = document.getElementById("menuOverlay");
-const menuIconImage = menuBtn.querySelector(".menu-icon-image-navbar");
-
 menuBtn.addEventListener("click", function () {
-  if (menuOverlay.style.left === "0px") {
-    // Close the menu if it's already open
-    menuOverlay.style.left = "-30%";
-    menuBtn.setAttribute("src", "assets/menu.png");
+  if (menuOverlay.classList.contains("open")) {
+    closeMenu();
   } else {
-    // Open the menu
-    menuOverlay.style.left = "0";
-    menuBtn.setAttribute("src", "assets/remove.png");
+    openMenu();
   }
 });
 
@@ -200,13 +195,45 @@ document.addEventListener("click", function (event) {
     !event.target.closest(".menu-content") &&
     !event.target.closest(".menu-icon-image-navbar")
   ) {
-    menuOverlay.style.left = "-30%";
-    menuBtn.setAttribute("src", "assets/menu.png");
+    closeMenu();
   }
 });
 
-// Close the menu when scrolling occurs
-window.addEventListener("scroll", function () {
-  menuOverlay.style.left = "-30%";
+function openMenu() {
+  menuOverlay.style.left = "0";
+  menuBtn.setAttribute("src", "assets/remove.png");
+  menuOverlay.classList.add("open");
+  disableScroll();
+}
+
+function closeMenu() {
+  menuOverlay.style.left = "-100%";
   menuBtn.setAttribute("src", "assets/menu.png");
+  menuOverlay.classList.remove("open");
+  enableScroll();
+}
+
+function disableScroll() {
+  document.body.style.overflow = "hidden";
+}
+
+function enableScroll() {
+  document.body.style.overflow = "auto";
+}
+
+window.addEventListener("scroll", function () {
+  if (menuOverlay.classList.contains("open")) {
+    closeMenu();
+  }
+});
+
+// Change Dark and Light Theme
+
+changeThemeDiv.addEventListener("click", function () {
+  isDarkTheme = !isDarkTheme;
+  if (isDarkTheme) {
+    changeThemeBtn.setAttribute("src", "/assets/moon.png");
+  } else {
+    changeThemeBtn.setAttribute("src", "/assets/sun.png");
+  }
 });
