@@ -190,21 +190,24 @@ body {
 .body-div {
   /* background-color: aqua; */
   width: 100%;
-  height: 2000px;
+  /* height: 2000px; */
+  height: fit-content;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
 
 .body1-div {
-  background-color: red;
+  /* background-color: red; */
   /* height: 1400px; */
   height: fit-content;
   width: 1050px;
   margin-top: 100px;
 }
 
-.title-body1 {
+.title-body1,
+.title-body2,
+.body3-title {
   color: white;
   font-size: 30px;
 }
@@ -304,4 +307,92 @@ body {
 .view-more-div:hover .view-more-text {
   z-index: 2;
   color: black;
+}
+
+.body2-div {
+  /* background-color: aqua; */
+  height: fit-content;
+  width: 1050px;
+  margin-top: 100px;
+}
+
+.games-container-body2 {
+  width: 100%;
+  height: fit-content;
+  /* background-color: yellow; */
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+
+.games-div-body2 {
+  width: 244px;
+  height: 300px;
+  overflow: hidden;
+}
+
+.game-img-body2 {
+  width: 100%;
+  height: 100%;
+  transition: 2s;
+}
+
+.game-img-body2.active {
+  transform: scale(1.5);
+  transition: 5s;
+}
+
+.body3-div {
+  /* background-color: red; */
+  height: fit-content;
+  width: 1050px;
+  margin-top: 100px;
+}
+
+.body3-title {
+  text-align: center;
+}
+
+.customers-div {
+  width: 100%;
+  height: fit-content;
+  /* background-color: yellow; */
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  color: #fff;
+}
+
+.customer-box {
+  /* background-color: green; */
+}
+
+.customer-review {
+  max-width: 300px;
+}
+
+.customer-details {
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 140px;
+  position: relative;
+}
+
+.customer-image {
+  width: 50px;
+  position: absolute;
+  top: 10px;
+}
+
+.customer-name {
+  margin-top: 20px;
+  position: absolute;
+}
+
+.customer-rate {
+  width: 100px;
+  margin-top: 50px;
+  position: absolute;
 }
