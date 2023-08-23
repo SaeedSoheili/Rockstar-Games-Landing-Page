@@ -727,6 +727,19 @@ body {
 
 /* Menu - FINISH */
 
+/* Scroll Bar */
+
+.scroll-bar {
+  position: fixed;
+  top: 0px;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background-color: orange;
+  z-index: 9999;
+  transition: width 0.3s ease;
+}
+
 @media (max-width: 470px) {
   .left-box-navBar {
     padding-left: 20px;

@@ -39,6 +39,7 @@ const menuIconImage = menuBtn.querySelector(".menu-icon-image-navbar");
 const changeThemeDiv = document.querySelector(".change-theme-div-navbar");
 const changeThemeBtn = changeThemeDiv.querySelector(".change-theme-btn-navbar");
 let isDarkTheme = false;
+const scrollBar = document.getElementById("scrollBar");
 
 // Navbar Hide and Show
 window.addEventListener("scroll", () => {
@@ -233,7 +234,36 @@ changeThemeDiv.addEventListener("click", function () {
   isDarkTheme = !isDarkTheme;
   if (isDarkTheme) {
     changeThemeBtn.setAttribute("src", "/assets/moon.png");
+    document.body.style.backgroundColor = "#B9B4C7";
+    document.querySelector(".body-div").style.backgroundColor = "#5C5470";
+    document.querySelector(".navBar-div").style.backgroundColor = "#FFF5E0";
   } else {
     changeThemeBtn.setAttribute("src", "/assets/sun.png");
+    document.body.style.backgroundColor = "#000";
+    document.querySelector(".body-div").style.backgroundColor = "#0b0b0b";
+    document.querySelector(".navBar-div").style.backgroundColor =
+      "rgba(0, 0, 0, 0.85)";
   }
+});
+
+// Scroll bar
+
+window.addEventListener("scroll", function () {
+  const scrollTop =
+    document.documentElement.scrollTop || document.body.scrollTop;
+  const windowHeight = document.documentElement.clientHeight;
+  const contentHeight = document.documentElement.scrollHeight;
+
+  const scrollPercentage = (scrollTop / (contentHeight - windowHeight)) * 100;
+  scrollBar.style.width = scrollPercentage + "%";
+});
+
+window.addEventListener("load", function () {
+  const scrollTop =
+    document.documentElement.scrollTop || document.body.scrollTop;
+  const windowHeight = document.documentElement.clientHeight;
+  const contentHeight = document.documentElement.scrollHeight;
+
+  const scrollPercentage = (scrollTop / (contentHeight - windowHeight)) * 100;
+  scrollBar.style.width = scrollPercentage + "%";
 });
