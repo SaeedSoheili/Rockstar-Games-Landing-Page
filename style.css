@@ -12,6 +12,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: sticky;
+  z-index: 3;
+  transition: 1s;
 }
 
 .left-box-navBar {
@@ -105,7 +108,7 @@ body {
 .slider-image {
   width: 100%;
   height: 100%;
-  background-image: url(https://videos-rockstargames-com.akamaized.net/screencaps/12413/en_us/1920.jpg);
+  background-image: url("assets/slider-1.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -124,6 +127,7 @@ body {
   width: 80%;
   height: 90%;
   /* background-color: green; */
+  position: relative;
 }
 
 .game-name-slider {
@@ -132,6 +136,7 @@ body {
   color: white;
   margin-top: 30px;
   margin-bottom: 10px;
+  cursor: default;
 }
 
 .title-slider {
@@ -140,12 +145,14 @@ body {
   word-wrap: normal;
   max-width: 290px;
   margin-top: 0px;
+  cursor: default;
 }
 
 .button-div-slider {
   display: flex;
   align-items: center;
   justify-content: left;
+  cursor: pointer;
 }
 
 .button-slider {
@@ -167,9 +174,10 @@ body {
   /* background-color: black; */
   width: 100%;
   height: 20px;
-  margin-top: 100px;
+  bottom: 0px;
   align-items: center;
   justify-content: space-between;
+  position: absolute;
 }
 
 .selector-slider {
@@ -177,6 +185,7 @@ body {
   height: 5px;
   background-color: #666666;
   border-radius: 20px;
+  cursor: pointer;
 }
 
 .selector-slider.active {
@@ -211,6 +220,7 @@ body {
 .body4-title {
   color: white;
   font-size: 30px;
+  cursor: default;
 }
 
 .news-box-div-body1 {
@@ -232,6 +242,7 @@ body {
   width: 334px;
   margin-bottom: 20px;
   border-radius: 10px;
+  cursor: default;
 }
 
 .news-box-img-div {
@@ -240,7 +251,9 @@ body {
 }
 
 .news-box-footer-div {
-  padding: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
 }
 
 .news-box-footer-game-name {
@@ -330,6 +343,7 @@ body {
   width: 244px;
   height: 300px;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .game-img-body2 {
@@ -368,6 +382,7 @@ body {
 
 .customer-box {
   /* background-color: green; */
+  cursor: default;
 }
 
 .customer-review {
@@ -418,7 +433,7 @@ body {
 .subject-body4 {
   width: 500px;
   border-radius: 5px;
-  background-color: #707070;
+  background-color: #111111;
   color: #fff;
   font-size: 20px;
   padding: 5px;
@@ -431,7 +446,7 @@ body {
   border-radius: 5px;
   color: #fff;
   font-size: 20px;
-  background-color: #707070;
+  background-color: #111111;
   padding: 10px;
 }
 
@@ -443,11 +458,12 @@ body {
   color: #fff;
   font-weight: 600;
   font-size: 15px;
+  cursor: pointer;
 }
 
 .message-body4::placeholder,
 .subject-body4::placeholder {
-  color: #000000;
+  color: #707070;
   font-weight: 600;
   font-size: 15px;
 }
@@ -457,6 +473,7 @@ body {
   opacity: 0;
   color: red;
   transition: 0.5s;
+  cursor: default;
 }
 
 .subject-body4:focus + .subject-counter,
@@ -470,7 +487,7 @@ body {
   /* background-color: aqua; */
   margin-top: 150px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   text-align: center;
   color: #fff;
@@ -488,10 +505,12 @@ body {
   display: block;
   margin-bottom: -10px;
   margin-top: -3px;
+  cursor: default;
 }
 
 .name-body5 {
   font-size: 13px;
+  cursor: default;
 }
 
 /* Body - FINISH */
@@ -499,7 +518,6 @@ body {
 /* Footer - START */
 
 .footer-div {
-  background-color: aqua;
   width: 100%;
   height: 473px;
   display: flex;
@@ -510,7 +528,6 @@ body {
 .footer1-div {
   height: 41px;
   width: 90%;
-  background-color: yellow;
   margin-top: 120px;
   display: flex;
   justify-content: space-between;
@@ -519,7 +536,6 @@ body {
 .footer2-div {
   height: 48px;
   width: 90%;
-  background-color: yellow;
   margin-top: 80px;
   display: flex;
   justify-content: space-between;
@@ -528,21 +544,18 @@ body {
 .footer3-div {
   height: 24px;
   width: 90%;
-  background-color: yellow;
   margin-top: 100px;
   display: flex;
   justify-content: space-between;
 }
 
 .footer-div-left {
-  background-color: red;
   width: 50%;
   display: flex;
   justify-content: flex-start;
 }
 
 .footer-div-right {
-  background-color: blue;
   width: 50%;
   display: flex;
   justify-content: flex-end;
@@ -560,11 +573,16 @@ body {
   cursor: pointer;
 }
 
+.footer1-left-item:hover {
+  color: #fcaf17;
+}
+
 .new-tab-img {
   width: 13px;
   position: absolute;
   right: -18px;
   top: 7px;
+  cursor: pointer;
 }
 
 .footer1-right-text {
@@ -573,6 +591,7 @@ body {
   font-weight: 500;
   margin-left: 10px;
   margin-right: 10px;
+  cursor: pointer;
 }
 
 .footer1-lang-icon,
@@ -580,6 +599,7 @@ body {
   width: 20px;
   height: 20px;
   margin-top: 14px;
+  cursor: pointer;
 }
 
 .footer2-items {
@@ -587,6 +607,11 @@ body {
   font-size: 15px;
   font-weight: 400;
   margin-right: 20px;
+  cursor: pointer;
+}
+
+.footer2-items:hover {
+  color: #fcaf17;
 }
 
 .footer2-div .footer-div-left {
@@ -603,17 +628,18 @@ body {
   margin-left: 20px;
   margin-right: 20px;
   margin-top: 10px;
+  cursor: pointer;
 }
 
 .footer3-left,
 .footer3-right {
-  background-color: red;
   width: 30%;
   display: flex;
   align-items: center;
   font-size: 15px;
   font-weight: bold;
   color: #fff;
+  cursor: default;
 }
 
 .footer3-right {
@@ -629,3 +655,88 @@ body {
   font-weight: bold;
   color: #fff;
 }
+
+.footer3-center p {
+  cursor: pointer;
+}
+
+/* Footer - FINISH */
+
+.go-top-btn {
+  width: 50px;
+  height: 50px;
+  background-color: #464646;
+  border-radius: 100%;
+  border: none;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  cursor: pointer;
+  transition: 1s;
+  display: none;
+}
+
+.go-top-img {
+  width: 40px;
+  height: 40px;
+}
+
+/* Menu - START */
+
+.menu-overlay {
+  position: fixed;
+  top: 60px;
+  left: -30%;
+  width: 30%;
+  height: 100vh;
+  background-color: #070001;
+  color: white;
+  overflow-y: auto;
+  transition: left 0.3s ease;
+  border-top: 1px solid #555;
+}
+
+.menu-content {
+  padding: 20px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search-bar-input {
+  background-color: #111111;
+  border: none;
+  height: 40px;
+  width: 300px;
+  background-image: url("assets/search-interface-symbol.png");
+  background-repeat: no-repeat;
+  background-position: left;
+  background-position-x: 10px;
+  background-size: 20px;
+  padding-left: 40px;
+  padding-right: 30px;
+  color: white;
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.menu-list li {
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.menu-list li:hover {
+  color: #fcaf17;
+}
+
+/* Menu - FINISH */
