@@ -2,7 +2,7 @@
 
 This is a simple landing page created with pure JavaScript, HTML, and CSS, inspired by the Rockstar Games website. It includes additional features, and **all copyrights are reserved by Rockstar Games**.
 
-Live Demo:
+Live Demo: https://rockstar-games-my.netlify.app/
 
 ## :rocket: To-Do List
 
